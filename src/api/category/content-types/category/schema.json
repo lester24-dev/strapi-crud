@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categories",
+  "info": {
+    "singularName": "category",
+    "pluralName": "categories",
+    "displayName": "Category",
+    "description": "Organize your content into categories"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid"
+    },
+    "articles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::article.article",
+      "mappedBy": "category"
+    },
+    "description": {
+      "type": "text"
+    },
+    "restaurants": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::restaurant.restaurant",
+      "inversedBy": "categories"
+    },
+    "clients": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::client.client",
+      "inversedBy": "categories"
+    },
+    "providers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::provider.provider",
+      "inversedBy": "categories"
+    }
+  }
+}

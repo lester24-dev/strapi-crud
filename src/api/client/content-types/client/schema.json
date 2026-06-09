@@ -1,0 +1,67 @@
+{
+  "kind": "collectionType",
+  "collectionName": "clients",
+  "info": {
+    "singularName": "client",
+    "pluralName": "clients",
+    "displayName": "Client"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "client_name": {
+      "type": "text",
+      "default": "client_name",
+      "required": true,
+      "unique": true
+    },
+    "businessAddress": {
+      "type": "text",
+      "default": "businessAddress",
+      "required": true,
+      "unique": true
+    },
+    "statuses": {
+      "type": "string",
+      "default": "statuses",
+      "required": true
+    },
+    "paymentTermsDays": {
+      "type": "text",
+      "default": "paymentTermsDays",
+      "required": true
+    },
+    "webhookUrl": {
+      "type": "text",
+      "default": "webhookUrl",
+      "required": false,
+      "unique": true
+    },
+    "vehicle_type": {
+      "type": "json",
+      "required": false
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "mappedBy": "clients"
+    },
+    "apiKeyMasked": {
+      "type": "text",
+      "default": "apiKeyMasked",
+      "required": true
+    },
+    "client_id": {
+      "type": "string",
+      "default": "client",
+      "required": true,
+      "unique": true
+    },
+    "deleted_at": {
+      "type": "datetime"
+    }
+  }
+}

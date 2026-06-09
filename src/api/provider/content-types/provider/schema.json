@@ -1,0 +1,117 @@
+{
+  "kind": "collectionType",
+  "collectionName": "providers",
+  "info": {
+    "singularName": "provider",
+    "pluralName": "providers",
+    "displayName": "Provider"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "text",
+      "default": "name",
+      "required": true,
+      "unique": true
+    },
+    "statuses": {
+      "type": "string",
+      "default": "statuses",
+      "required": true
+    },
+    "capacity": {
+      "type": "decimal",
+      "required": true,
+      "default": 0
+    },
+    "registrationId": {
+      "type": "text",
+      "default": "registrationId",
+      "required": true,
+      "unique": true
+    },
+    "officeAddress": {
+      "type": "text",
+      "default": "officeAddress",
+      "required": true
+    },
+    "garageAddress": {
+      "type": "text",
+      "default": "garageAddress",
+      "required": true
+    },
+    "rateType": {
+      "type": "string",
+      "default": "rateType",
+      "required": true
+    },
+    "appUsage": {
+      "type": "text",
+      "default": "appUsage",
+      "required": true
+    },
+    "serviceAreasText": {
+      "type": "richtext",
+      "required": true,
+      "default": "serviceAreasText"
+    },
+    "phone": {
+      "type": "biginteger",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "apiUrl": {
+      "type": "text",
+      "default": "apiUrl",
+      "required": false,
+      "unique": false
+    },
+    "apiToken": {
+      "type": "text",
+      "default": "apiToken",
+      "required": false,
+      "unique": false
+    },
+    "bankName": {
+      "type": "text",
+      "default": "bankName",
+      "required": true
+    },
+    "accountName": {
+      "type": "text",
+      "default": "accountName",
+      "required": true
+    },
+    "accountNumber": {
+      "type": "text",
+      "default": "accountNumber",
+      "required": true,
+      "unique": true
+    },
+    "bankBranch": {
+      "type": "text",
+      "default": "bankBranch",
+      "required": true
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "mappedBy": "providers"
+    },
+    "contactPerson": {
+      "type": "text",
+      "default": "contactPerson",
+      "required": true
+    },
+    "deleted_at": {
+      "type": "datetime"
+    }
+  }
+}
